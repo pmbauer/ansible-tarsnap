@@ -1,0 +1,8 @@
+/var/log/tarsnap.log {
+        monthly
+        missingok
+        rotate 12
+        compress
+        notifempty
+        create 0644 root root
+}

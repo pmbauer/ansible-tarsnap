@@ -1,0 +1,9 @@
+- hosts: all
+  sudo: yes
+  pre_tasks:
+    - name: Update apt cache
+      apt: update_cache=yes
+    - name: Upgrade all safe packages
+      apt: upgrade=safe
+  roles:
+    - ansible-tarsnap

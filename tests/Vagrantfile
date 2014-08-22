@@ -1,0 +1,21 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+VAGRANTFILE_API_VERSION = "2"
+
+Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
+  config.vm.box = "box-cutter/debian76"
+  config.vm.hostname = "tarsnaptest.local"
+  config.vm.network "private_network", ip: "172.16.100.3"
+
+  config.vm.provider :virtualbox do |vb, override|
+    vb.memory = 512
+    vb.customize ["modifyvm", :id, "--natdnshostresolver1", "on"]
+  end
+
+  config.vm.provision :ansible do |ansible|
+    ansible.playbook = "vagrant.yml"
+    ansible.host_key_checking = false
+    ansible.extra_vars = { ansible_ssh_user: "vagrant", testing: true }
+  end
+end

@@ -1,0 +1,10 @@
+tarsnap_version: 1.0.35
+tarsnap_keyfile: "/root/tarsnap.key"
+tarsnap_cache: "/usr/local/tarsnap-cache"
+tarsnap_cron_minute: "0"
+tarsnap_cron_hour: "3"
+tarsnap_cron_day: "*"
+tarsnap_cron_month: "*"
+tarsnap_tarsnapper_conf: "tarsnapper.default.conf"
+#tarsnap_global_exclusions:
+#  - "*.deb"

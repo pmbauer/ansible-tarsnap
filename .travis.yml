@@ -1,0 +1,25 @@
+---
+language: python
+python: "2.7"
+
+before_install:
+  # Make sure everything's up to date.
+  - sudo apt-get update -qq
+
+install:
+  # Install Ansible.
+  - pip install ansible
+
+script:
+  # synax check run
+  - "ansible-playbook -i tests/travis_inventory tests/travis.yml --syntax-check"
+
+  # role executes first time without error
+  - "ansible-playbook -vvvv -i tests/travis_inventory tests/travis.yml"
+
+  # role idempotence
+  - >
+    ansible-playbook -i tests/travis_inventory tests/travis.yml
+    | grep -q 'changed=0.*failed=0'
+    && (echo 'Idempotence test: pass' && exit 0)
+    || (echo 'Idempotence test: fail' && exit 1)
