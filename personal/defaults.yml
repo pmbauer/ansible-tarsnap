@@ -15,7 +15,6 @@ tarsnap_global_exclusions:
   - "/home/*/.local/share/zeitgeist"
   - "/home/*/.m2"
   - "/home/*/.macromedia"
-  - "/home/*/.mozilla"
   - "/home/*/.npm"
   - "/home/*/.thunderbird"
   - "/home/*/.vagrant.d"
