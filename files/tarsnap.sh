@@ -13,8 +13,8 @@ function log {
 }
 
 function failed {
-    log "backup generation FAILED"
-    exit
+    log "backup generation FAILED: Line: $1, Code: $2"
+    exit $2
 }
 
 # ###############################################################################
@@ -22,7 +22,7 @@ function failed {
 # ###############################################################################
 PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
 
-trap 'failed' ERR
+trap 'failed ${LINENO} ${$?}' ERR
 
 exec > >(tee -a /var/log/tarsnap.log)
 exec 2>&1
