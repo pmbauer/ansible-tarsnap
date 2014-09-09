@@ -4,6 +4,7 @@ tarsnap_global_exclusions:
   - "*.rpm"
   - "*.sav"
   - "*.vmdk"
+  - "*.vdi"
   - "/home/*/.adobe"
   - "/home/*/.aerofs*"
   - "/home/*/.cache"
