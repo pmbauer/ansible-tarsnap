@@ -20,5 +20,6 @@ tarsnap_global_exclusions:
   - "/home/*/.thunderbird"
   - "/home/*/.vagrant.d"
   - "/home/*/.voom-repos"
+  - "/home/*/usr"
   - "/home/*/Downloads"
   - "/home/*/VirtualBox*"
