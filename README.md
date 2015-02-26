@@ -7,7 +7,7 @@ Is ...
   - An ansible role for operating tarsnap backups
   - An [ansible-pull] compatible playbook for standalone installations.
 
-The roll downloads sources for, verifies the gpg-encrypted sha signature, compiles, and installs [Tarsnap].  
+The role downloads sources for, verifies the gpg-encrypted sha signature, compiles, and installs [Tarsnap].  
 **Batteries included**: [tarsnapper], cron job, shell wrapper, and [logrotate] policy.
 
 ## version
