@@ -56,7 +56,7 @@ You should fork this repo before executing locally since the exclusion patterns 
 ```bash
 # installs role locally, using the exclusion patterns and tarsnapper.conf
 # defined in the "personal" directory
-ansible-playbook local.yml
+ansible-playbook -i /dev/null local.yml
 
 # Now that tarsnap is installed, generate a tarsnap machine key.
 # This will prompt for your tarsnap.com account password
