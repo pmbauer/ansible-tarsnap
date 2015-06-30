@@ -21,6 +21,7 @@ tarsnap_global_exclusions:
   - "/home/*/.local/share/Zeal/Zeal/docsets"
   - "/home/*/.m2"
   - "/home/*/.macromedia"
+  - "/home/*/.mix"
   - "/home/*/.nimble"
   - "/home/*/.npm"
   - "/home/*/.opam"
