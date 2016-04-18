@@ -1,0 +1,24 @@
+- name: Install tarsnapper wrapper
+  easy_install: name=tarsnapper
+
+- name: Install tarsnapper configuration file
+  copy: src={{ tarsnap_tarsnapper_conf }} dest=/root/tarsnapper.conf mode=644
+
+- name: Install Tarsnap configuration file
+  template: src=tarsnaprc.j2 dest=/root/.tarsnaprc mode=644
+
+- name: Install tarsnapper backup script
+  copy: src=tarsnap.sh dest=/root/tarsnap.sh mode=755
+
+- name: Configure tarsnap logrotate
+  copy: src=etc_logrotate_tarsnap dest=/etc/logrotate.d/tarsnap owner=root group=root mode=0644
+
+- name: Install nightly Tarsnap-generations cronjob
+  cron:
+  args:
+    name: "Tarsnap backup"
+    job: "/root/tarsnap.sh > /dev/null"
+    minute: "{{ tarsnap_cron_minute }}"
+    hour: "{{ tarsnap_cron_hour }}"
+    day: "{{ tarsnap_cron_day }}"
+    month: "{{ tarsnap_cron_month }}"
