@@ -1,5 +1,5 @@
 - hosts: all
-  sudo: yes
+  become: true
   pre_tasks:
     - name: Update apt cache
       apt: update_cache=yes
