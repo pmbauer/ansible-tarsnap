@@ -6,7 +6,7 @@ galaxy_info:
   description: role for operating tarsnap backups
   company: "N/A"
   license: "GPL v3"
-  min_ansible_version: 1.7
+  min_ansible_version: 2.0
   platforms:
   - name: Debian
     versions:

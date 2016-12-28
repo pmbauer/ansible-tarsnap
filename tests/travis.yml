@@ -1,5 +1,5 @@
 - hosts: localhost
   connection: local
-  sudo: yes
+  become: true
   roles:
     - ansible-tarsnap
